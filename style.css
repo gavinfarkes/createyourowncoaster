@@ -1,26 +1,21 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial, sans-serif;
   background: #0e0e11;
-  color: #f1f1f1;
+  color: #fff;
 }
 
-/* NAV */
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 15px 40px;
-  background: #000;
-}
-
-.logo {
-  font-size: 16px;
-  letter-spacing: 2px;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
 }
 
 nav a {
   color: #aaa;
-  margin-left: 20px;
+  margin-left: 15px;
   text-decoration: none;
 }
 
@@ -28,33 +23,18 @@ nav a:hover {
   color: #00c2ff;
 }
 
-/* HERO */
 .hero {
   text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #111, #1a1a2e);
+  padding: 80px;
+  background: linear-gradient(135deg,#111,#1a1a2e);
 }
 
-.hero.small {
-  padding: 60px 20px;
-}
-
-/* IMAGE */
 .image-banner img {
   width: 100%;
   height: 300px;
   object-fit: cover;
 }
 
-/* SECTIONS */
-.intro {
-  text-align: center;
-  padding: 50px 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-/* FEATURES */
 .features {
   display: flex;
   justify-content: center;
@@ -64,11 +44,12 @@ nav a:hover {
 }
 
 .card {
-  background: #1a1a22;
+  background: rgba(255,255,255,0.05);
+  padding: 15px;
   border-radius: 15px;
-  overflow: hidden;
-  max-width: 250px;
+  width: 250px;
   text-align: center;
+  box-shadow: 0 0 20px rgba(0,194,255,0.2);
 }
 
 .card img {
@@ -77,33 +58,26 @@ nav a:hover {
   object-fit: cover;
 }
 
-/* PROCESS */
-.process {
-  display: flex;
-  justify-content: space-around;
+.designer {
+  text-align: center;
   padding: 40px;
 }
 
-/* TEAM */
-.team {
+.coaster-preview {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #222;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
 }
 
-.team-card {
-  background: #1a1a22;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-/* GALLERY */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 40px;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 10px;
+  padding: 20px;
 }
 
 .gallery img {
@@ -111,22 +85,10 @@ nav a:hover {
   border-radius: 10px;
 }
 
-/* CTA */
-.cta {
-  text-align: center;
-  padding: 60px;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #777;
-}
 .hidden {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.8s ease;
+  transition: 0.8s;
 }
 
 .show {
