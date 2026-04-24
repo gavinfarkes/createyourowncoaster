@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Create a Coaster</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Create a Coaster</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-});
 
-document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
-</script>
+<body>
+
 <nav>
   <h2 class="logo">CREATE A COASTER</h2>
   <div>
@@ -31,47 +22,77 @@ document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
   <p>Custom coasters made through precision and creativity</p>
 </header>
 
-<section class="image-banner">
+<section class="image-banner hidden">
   <img src="https://images.unsplash.com/photo-1581093458791-9d09c7b2d3e4">
 </section>
 
-<section class="intro">
+<section class="intro hidden">
   <h2>What We Do</h2>
-  <p>
-    We design and create custom coasters using 3D printing and precision
-    vinyl cutting. Each piece is built with attention to detail,
-    combining durability with clean design.
-  </p>
+  <p>We create custom coasters using 3D printing and vinyl design.</p>
 </section>
 
-<section class="features">
+<section class="features hidden">
+
   <div class="card">
     <img src="https://images.unsplash.com/photo-1581091870622-1e7e3b2c4c2f">
     <h3>3D Printing</h3>
-    <p>Strong, precise, and built to last.</p>
+    <p>Strong and precise builds.</p>
   </div>
 
   <div class="card">
     <img src="https://images.unsplash.com/photo-1603575448369-9b7d3b7f5d3b">
     <h3>Custom Design</h3>
-    <p>Unique styles made with Cricut vinyl.</p>
+    <p>Unique vinyl designs.</p>
   </div>
 
   <div class="card">
     <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
     <h3>Digital Showcase</h3>
-    <p>Clean presentation of every build.</p>
+    <p>Clean presentation.</p>
   </div>
+
 </section>
 
-<section class="cta">
-  <h2>Built by a Team</h2>
-  <p>Scroll to learn more about the creators behind the project</p>
+<!-- DESIGN TOOL -->
+<section class="designer hidden">
+  <h2>Design Your Coaster</h2>
+
+  <div class="designer-box">
+    <div class="coaster-preview" id="coaster">Your Design</div>
+
+    <div class="controls">
+      <input type="color" id="colorPicker">
+      <input type="text" id="textInput" placeholder="Enter text">
+      <button onclick="updateCoaster()">Apply</button>
+    </div>
+  </div>
 </section>
 
 <footer>
   <p>© 2026 Create a Coaster</p>
 </footer>
+
+<!-- SCRIPT -->
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+
+function updateCoaster() {
+  const color = document.getElementById("colorPicker").value;
+  const text = document.getElementById("textInput").value;
+  const coaster = document.getElementById("coaster");
+
+  coaster.style.background = color;
+  coaster.innerText = text;
+}
+</script>
 
 </body>
 </html>
