@@ -1,97 +1,314 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0e0e11;
-  color: #fff;
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#0b0b10;
+  color:white;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 30px;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(10px);
+/* NAVBAR */
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
-nav a {
-  color: #aaa;
-  margin-left: 15px;
-  text-decoration: none;
+.logo{
+  letter-spacing:3px;
 }
 
-nav a:hover {
-  color: #00c2ff;
+.nav-links a{
+  color:#ccc;
+  margin-left:20px;
+  text-decoration:none;
+  transition:0.3s;
 }
 
-.hero {
-  text-align: center;
-  padding: 80px;
-  background: linear-gradient(135deg,#111,#1a1a2e);
+.nav-links a:hover{
+  color:#00c2ff;
 }
 
-.image-banner img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
+/* HERO */
+
+.hero{
+  height:90vh;
+
+  background:
+  linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.65)),
+  url("https://images.pexels.com/photos/19124461/pexels-photo-19124461/free-photo-of-3d-printer-printing.jpeg");
+
+  background-size:cover;
+  background-position:center;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
-.features {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px;
-  flex-wrap: wrap;
+.hero-overlay{
+  max-width:700px;
+  padding:20px;
 }
 
-.card {
-  background: rgba(255,255,255,0.05);
-  padding: 15px;
-  border-radius: 15px;
-  width: 250px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0,194,255,0.2);
+.hero h1{
+  font-size:70px;
+  letter-spacing:6px;
+  margin-bottom:20px;
+
+  text-shadow:0 0 20px rgba(0,194,255,0.6);
 }
 
-.card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
+.hero p{
+  font-size:20px;
+  color:#ddd;
+  line-height:1.6;
 }
 
-.designer {
-  text-align: center;
-  padding: 40px;
+/* INTRO */
+
+.intro{
+  padding:100px 20px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
 }
 
-.coaster-preview {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: #222;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.intro h2{
+  font-size:42px;
+  margin-bottom:20px;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 10px;
-  padding: 20px;
+.intro p{
+  color:#bbb;
+  line-height:1.8;
+  font-size:18px;
 }
 
-.gallery img {
-  width: 100%;
-  border-radius: 10px;
+/* FEATURES */
+
+.features{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+  padding:50px 20px;
 }
 
-.hidden {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s;
+.card{
+  width:320px;
+
+  background:rgba(255,255,255,0.05);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  backdrop-filter:blur(10px);
+
+  transition:0.3s;
+
+  box-shadow:0 0 20px rgba(0,194,255,0.12);
 }
 
-.show {
-  opacity: 1;
-  transform: translateY(0);
+.card:hover{
+  transform:translateY(-10px);
+
+  box-shadow:0 0 30px rgba(0,194,255,0.45);
+}
+
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.card h3{
+  padding-top:20px;
+  font-size:26px;
+}
+
+.card p{
+  padding:0 20px 25px;
+  color:#bbb;
+  line-height:1.6;
+}
+
+/* SIZE SECTION */
+
+.printer-section{
+  padding:100px 20px;
+  text-align:center;
+}
+
+.printer-section h2{
+  font-size:48px;
+  margin-bottom:50px;
+}
+
+.printer-grid{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.printer-card{
+  width:320px;
+  border-radius:20px;
+  overflow:hidden;
+
+  background:#16161d;
+
+  transition:0.3s;
+
+  box-shadow:0 0 25px rgba(0,194,255,0.12);
+}
+
+.printer-card:hover{
+  transform:scale(1.03);
+}
+
+.printer-card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+}
+
+.printer-card h3{
+  font-size:28px;
+  margin-top:20px;
+}
+
+.printer-card p{
+  padding:0 20px 25px;
+  color:#bbb;
+}
+
+/* DESIGNER */
+
+.designer{
+  padding:100px 20px;
+  text-align:center;
+}
+
+.designer h2{
+  font-size:48px;
+}
+
+.designer-box{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:50px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
+
+.coaster-preview{
+  width:230px;
+  height:230px;
+  border-radius:50%;
+  background:#222;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:22px;
+  font-weight:bold;
+
+  box-shadow:0 0 30px rgba(0,194,255,0.4);
+
+  transition:0.3s;
+}
+
+.controls{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.controls input,
+.controls button{
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  font-size:16px;
+}
+
+.controls button{
+  background:#00c2ff;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+/* TEAM */
+
+.team-section{
+  padding:100px 20px;
+  text-align:center;
+}
+
+.team-section h2{
+  font-size:48px;
+  margin-bottom:50px;
+}
+
+.team{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.team-card{
+  width:220px;
+
+  background:rgba(255,255,255,0.05);
+
+  padding:30px;
+
+  border-radius:20px;
+
+  backdrop-filter:blur(10px);
+
+  transition:0.3s;
+}
+
+.team-card:hover{
+  transform:translateY(-8px);
+}
+
+.team-card h3{
+  font-size:28px;
+}
+
+/* FOOTER */
+
+footer{
+  padding:40px;
+  text-align:center;
+  color:#777;
+}
+
+/* ANIMATIONS */
+
+.hidden{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 1s ease;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
 }
